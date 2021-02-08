@@ -1,0 +1,3 @@
+include ':SettingsPageLibrary'
+include ':app'
+rootProject.name = "Settings Page"
