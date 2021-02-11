@@ -9,6 +9,7 @@ import android.view.MenuItem;
 
 import com.classy.settingspagelibrary.Basic.BasicSettings;
 import com.classy.settingspagelibrary.Header.Header;
+import com.classy.settingspagelibrary.HeaderAndContent.HeaderAndContent;
 import com.classy.settingspagelibrary.MainSettings;
 
 import java.util.ArrayList;
@@ -44,17 +45,12 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        ArrayList<String> listSettingItems = new ArrayList<>();
-        listSettingItems.add(LIST_DIALOG_ONE);
-        listSettingItems.add(LIST_DIALOG_TWO);
-        listSettingItems.add(LIST_DIALOG_THREE);
-        listSettingItems.add(LIST_DIALOG_FOUR);
-        listSettingItems.add(LIST_DIALOG_FIVE);
-
         mySettingsList = MainSettings.createSettingsArray(
                 new Header("HEADER 1")
                         .build(),
-                new Header("HEADER 2")
+                new HeaderAndContent("HEADER 2")
+                        .setContent("Header 2 content")
+                        .setSeparator(false)
                         .build(),
                 new Header("HEADER 3")
                         .build(),
@@ -69,19 +65,6 @@ public class MainActivity extends AppCompatActivity {
         getMenuInflater().inflate(R.menu.menu_main, menu);
         return true;
     }
-
-//    @Override
-//    protected void onActivityResult(int requestCode, int resultCode, Intent data)
-//    {
-//        //todo we must update the the settings list associated with this
-//        //todo activity with the updated settings list.
-//        //todo because the list this activity holds is separate from the one in SettingsActivity
-//        if (requestCode == REQUEST_CODE_ACTIVITY_SETTINGS &&
-//                resultCode == RESULT_OK)
-//        {
-//            mySettingsList = (ArrayList<BasicSettings>) data.getSerializableExtra(SettingsActivity.INTENT_EXTRA_RESULT);
-//        }
-//    }
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item)

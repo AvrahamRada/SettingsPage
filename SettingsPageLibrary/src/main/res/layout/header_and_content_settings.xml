@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    style="@style/easySettings_settingContainer"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <ImageView
+        android:id="@+id/imageView_basicSettingsObject_icon"
+        style="@style/easySettings_imageView_icon"/>
+
+    <TextView
+        android:id="@+id/content_LBL_header"
+        style="@style/easySettings_textView_title"
+        android:layout_toEndOf="@+id/imageView_basicSettingsObject_icon"/>
+
+    <TextView
+        android:id="@+id/content_LBL_content"
+        style="@style/easySettings_textView_summary"
+        android:layout_alignEnd="@+id/content_LBL_header"
+        android:layout_alignStart="@+id/content_LBL_header"
+        android:layout_below="@+id/content_LBL_header"/>
+
+</RelativeLayout>
+
