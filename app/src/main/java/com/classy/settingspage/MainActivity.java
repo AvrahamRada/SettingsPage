@@ -8,6 +8,7 @@ import android.view.Menu;
 import android.view.MenuItem;
 
 import com.classy.settingspagelibrary.Basic.BasicSettings;
+import com.classy.settingspagelibrary.CheckBox.Checkbox;
 import com.classy.settingspagelibrary.Header.Header;
 import com.classy.settingspagelibrary.HeaderAndContent.HeaderAndContent;
 import com.classy.settingspagelibrary.MainSettings;
@@ -46,13 +47,17 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         mySettingsList = MainSettings.createSettingsArray(
-                new Header("HEADER 1")
+                new Header("HEADER")
                         .build(),
                 new HeaderAndContent("HEADER 2")
                         .setContent("Header 2 content")
                         .setSeparator(false)
                         .build(),
-                new Header("HEADER 3")
+                new Header("CHECKBOX")
+                        .build(),
+                new Checkbox("HEADER 3")
+                        .setContent("Header 3 content")
+                        .setSeparator(false)
                         .build(),
                 new Header("HEADER 4")
                         .build(),
