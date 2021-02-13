@@ -13,7 +13,7 @@ public class HeaderSettings extends BasicSettings implements Serializable {
     public HeaderSettings(String title) {
         super(title,
                 R.id.textView_headerSettingsObject_title,
-                true,
+                false,
                 Type.HEADER);
     }
 

@@ -19,7 +19,7 @@ public class CheckboxSettings extends BasicSettings implements Serializable {
     @Nullable @IdRes
     private Integer textViewContentId;     // TextView Content ID (R.id)
 
-    private boolean checkboxSettings_LBL_isChecked;
+    private boolean isChecked;
     @Nullable @IdRes
     private Integer checkboxId;            // CheckBox ID (R.id)
 
@@ -36,11 +36,11 @@ public class CheckboxSettings extends BasicSettings implements Serializable {
     }
 
     public boolean isCheckboxSettings_LBL_isChecked() {
-        return checkboxSettings_LBL_isChecked;
+        return isChecked;
     }
 
     public void setCheckboxSettings_LBL_isChecked(boolean checkboxSettings_LBL_isChecked) {
-        this.checkboxSettings_LBL_isChecked = checkboxSettings_LBL_isChecked;
+        this.isChecked = checkboxSettings_LBL_isChecked;
     }
 
     @Nullable

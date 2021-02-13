@@ -11,7 +11,9 @@ import com.classy.settingspagelibrary.Basic.BasicSettings;
 import com.classy.settingspagelibrary.CheckBox.Checkbox;
 import com.classy.settingspagelibrary.Header.Header;
 import com.classy.settingspagelibrary.HeaderAndContent.HeaderAndContent;
+import com.classy.settingspagelibrary.Image.Image;
 import com.classy.settingspagelibrary.MainSettings;
+import com.classy.settingspagelibrary.Switch.Switch;
 
 import java.util.ArrayList;
 
@@ -47,22 +49,39 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         mySettingsList = MainSettings.createSettingsArray(
-                new Header("HEADER")
+                new Header("Header")
                         .build(),
-                new HeaderAndContent("HEADER 2")
-                        .setContent("Header 2 content")
+                new HeaderAndContent("Header")
+                        .setContent("content")
                         .setSeparator(false)
                         .build(),
-                new Header("CHECKBOX")
+                new HeaderAndContent("Header")
+                        .setContent("content")
                         .build(),
-                new Checkbox("HEADER 3")
-                        .setContent("Header 3 content")
+                new Header("Checkbox")
+                        .build(),
+                new Checkbox("Header")
+                        .setContent("content")
                         .setSeparator(false)
                         .build(),
-                new Header("HEADER 4")
+                new Checkbox("Header")
+                        .setContent("content")
                         .build(),
-                new Header("HEADER 5")
+                new Header("Switch")
+                        .build(),
+                new Switch("Header")
+                        .setContent("content")
+                        .setSeparator(false)
+                        .build(),
+                new Image("Image")
+                        .setContent("content")
+                        .setSeparator(false)
+                        .setIconDrawableId(R.drawable.facebook)
+                        .build(),
+                new Image("Image")
+                        .setIconDrawableId(R.drawable.instagram)
                         .build());
+
     }
 
     @Override

@@ -20,7 +20,7 @@ public class Header {
         return this;
     }
 
-    public Header setSeparator(boolean separator) {
+    private Header setSeparator(boolean separator) {
         this.headerSettings.setSeparator(separator);
         return this;
     }
