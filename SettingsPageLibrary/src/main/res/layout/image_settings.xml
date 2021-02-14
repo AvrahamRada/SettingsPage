@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    style="@style/settingsPageLibrary_settingContainer"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <ImageView
+        android:id="@+id/imageSettings_IMG_image"
+        style="@style/settingsPageLibrary_IMG_logo"/>
+
+    <TextView
+        android:id="@+id/imageSettings_LBL_header"
+        style="@style/settingsPageLibrary_LBL_header"
+        android:layout_toEndOf="@+id/imageSettings_IMG_image"/>
+
+    <TextView
+        android:id="@+id/imageSettings_LBL_content"
+        style="@style/settingsPageLibrary_LBL_content"
+        android:layout_alignEnd="@+id/imageSettings_LBL_header"
+        android:layout_alignStart="@+id/imageSettings_LBL_header"
+        android:layout_below="@+id/imageSettings_LBL_header"/>
+
+
+
+</RelativeLayout>

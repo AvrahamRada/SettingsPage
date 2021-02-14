@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    style="@style/settingsPageLibrary_settingContainer"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <ImageView
+        android:id="@+id/switchSettings_IMG_image"
+        style="@style/settingsPageLibrary_IMG_logo"/>
+
+    <TextView
+        android:id="@+id/switchSettings_LBL_header"
+        style="@style/settingsPageLibrary_LBL_header"
+        android:layout_toEndOf="@+id/switchSettings_IMG_image"
+        android:layout_toStartOf="@+id/switchSettings_SW_switch"/>
+
+    <TextView
+        android:id="@+id/switchSettings_LBL_content"
+        style="@style/settingsPageLibrary_LBL_content"
+        android:layout_alignEnd="@+id/switchSettings_LBL_header"
+        android:layout_alignStart="@+id/switchSettings_LBL_header"
+        android:layout_below="@+id/switchSettings_LBL_header"/>
+
+<!--    <Switch-->
+<!--        android:id="@+id/switchSettings_SW_switch"-->
+<!--        android:layout_marginStart="10dp"-->
+<!--        android:layout_width="wrap_content"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:layout_alignParentEnd="true"-->
+<!--        android:layout_centerVertical="true"/>-->
+
+    <Switch
+        android:id="@+id/switchSettings_SW_switch"
+        android:layout_marginStart="10dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_centerVertical="true"
+        android:thumb="@drawable/round_thumb"
+        android:track="@drawable/round_track"/>
+</RelativeLayout>
