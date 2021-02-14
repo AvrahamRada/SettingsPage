@@ -13,6 +13,7 @@ import com.classy.settingspagelibrary.Header.Header;
 import com.classy.settingspagelibrary.HeaderAndContent.HeaderAndContent;
 import com.classy.settingspagelibrary.Image.Image;
 import com.classy.settingspagelibrary.MainSettings;
+import com.classy.settingspagelibrary.Seekbar.Seekbar;
 import com.classy.settingspagelibrary.Switch.Switch;
 
 import java.util.ArrayList;
@@ -49,13 +50,18 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         mySettingsList = MainSettings.createSettingsArray(
-                new Header("Header")
+                new Header("General")
                         .build(),
                 new HeaderAndContent("Header")
                         .setContent("content")
-                        .setSeparator(false)
                         .build(),
                 new HeaderAndContent("Header")
+                        .setContent("content")
+                        .setSeparator(true)
+                        .build(),
+                new Header("Screen Display")
+                        .build(),
+                new Seekbar("Brightness")
                         .setContent("content")
                         .build(),
                 new Header("Checkbox")
@@ -67,19 +73,37 @@ public class MainActivity extends AppCompatActivity {
                 new Checkbox("Header")
                         .setContent("content")
                         .build(),
-                new Header("Switch")
+                new Header("Configurations")
                         .build(),
-                new Switch("Header")
-                        .setContent("content")
-                        .setSeparator(false)
+                new Switch("Sound")
+                        .setContent("Off")
+                        .setSeparator(true)
                         .build(),
-                new Image("Image")
-                        .setContent("content")
-                        .setSeparator(false)
+                new Header("Network")
+                        .build(),
+                new Switch("Wi-Fi")
+                        .setContent("Off")
+                        .build(),
+                new Switch("Bluetooth")
+                        .setContent("On")
+                        .build(),
+                new Switch("NFC")
+                        .setContent("Off")
+                        .setSeparator(true)
+                        .build(),
+                new Header("Social Media")
+                        .build(),
+                new Image("Facebook")
+                        .setContent("Click to visit")
                         .setIconDrawableId(R.drawable.facebook)
                         .build(),
-                new Image("Image")
+                new Image("Instagram")
                         .setIconDrawableId(R.drawable.instagram)
+                        .setContent("Click to visit")
+                        .build(),
+                new Image("Tik-Tok")
+                        .setIconDrawableId(R.drawable.tik_tok)
+                        .setContent("Not available yet")
                         .build());
 
     }

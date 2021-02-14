@@ -5,5 +5,6 @@ public enum Type {
     CONTENT,
     CHECKBOX,
     SWITCH,
-    IMAGE
+    IMAGE,
+    SEEKBAR
 }

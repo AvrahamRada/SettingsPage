@@ -1,23 +1,21 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout
-    style="@style/easySettings_settingContainer"
+    style="@style/settingsPageLibrary_settingContainer"
     xmlns:android="http://schemas.android.com/apk/res/android">
 
     <ImageView
         android:id="@+id/checkboxSettings_IMG_image"
-        style="@style/easySettings_imageView_icon"
-        android:layout_width="24dp"
-        android:layout_height="24dp"/>
+        style="@style/settingsPageLibrary_IMG_logo"/>
 
     <TextView
         android:id="@+id/checkboxSettings_LBL_header"
-        style="@style/easySettings_textView_title"
+        style="@style/settingsPageLibrary_LBL_header"
         android:layout_toEndOf="@+id/checkboxSettings_IMG_image"
         android:layout_toStartOf="@+id/checkboxSettings_CBX_checkbox"/>
 
     <TextView
         android:id="@+id/checkboxSettings_LBL_content"
-        style="@style/easySettings_textView_summary"
+        style="@style/settingsPageLibrary_LBL_content"
         android:layout_alignEnd="@+id/checkboxSettings_LBL_header"
         android:layout_alignStart="@+id/checkboxSettings_LBL_header"
         android:layout_below="@+id/checkboxSettings_LBL_header"/>
@@ -28,6 +26,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentEnd="true"
-        android:layout_centerVertical="true"/>
+        android:layout_centerVertical="true"
+        android:theme="@style/settingsPageLibrary_COLOR_checkboxColor"/>
 
 </RelativeLayout>

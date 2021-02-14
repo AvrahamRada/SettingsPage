@@ -35,48 +35,4 @@ public class SettingsActivity extends AppCompatActivity {
         MainSettings.inflateSettingsLayout(this, container, mySettings);
 
     }
-
-//    @Override
-//    protected void onPause()
-//    {
-//        if (mToast != null)
-//        {
-//            mToast.cancel();
-//            mToast = null;
-//        }
-//        super.onPause();
-//    }
-
-//    private void makeToast(String message)
-//    {
-//        if (mToast != null)
-//        {
-//            mToast.cancel();
-//        }
-//
-//        mToast = Toast.makeText(getApplicationContext(), message, Toast.LENGTH_SHORT);
-//        mToast.show();
-//    }
-
-//    @Override
-//    public void onBackPressed()
-//    {
-//        Intent results = new Intent();
-//        results.putExtra(INTENT_EXTRA_RESULT, settingsList);
-//        setResult(RESULT_OK, results);
-//        super.onBackPressed();
-//    }
-
-//    @Override
-//    protected void onStart()
-//    {
-//        Log.d("aaa","SettingsActivity");
-//        super.onStart();
-//    }
-
-//    @Override
-//    protected void onStop()
-//    {
-//        super.onStop();
-//    }
 }

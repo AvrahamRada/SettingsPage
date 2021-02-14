@@ -1,20 +1,30 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <style name="easySettings_textView_title">
+    <style name="settingsPageLibrary_LBL_title">
         <item name="android:layout_width">match_parent</item>
         <item name="android:layout_height">wrap_content</item>
         <item name="android:textAppearance">?android:textAppearanceMedium</item>
-        <item name="android:textColor">@android:color/black</item>
+        <item name="android:textColor">#80F44336</item>
+        <item name="android:textStyle">bold</item>
         <item name="android:layout_alignParentTop">true</item>
     </style>
 
-    <style name="easySettings_textView_summary">
+    <style name="settingsPageLibrary_LBL_header">
         <item name="android:layout_width">match_parent</item>
         <item name="android:layout_height">wrap_content</item>
+        <item name="android:textAppearance">?android:textAppearanceMedium</item>
+        <item name="android:textColor">#B3000000</item>
+        <item name="android:layout_alignParentTop">true</item>
+    </style>
+
+    <style name="settingsPageLibrary_LBL_content">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textColor">#80000000</item>
         <item name="android:textAppearance">?android:textAppearanceSmall</item>
     </style>
 
-    <style name="easySettings_imageView_icon">
+    <style name="settingsPageLibrary_IMG_logo">
         <item name="android:layout_width">@dimen/settings_icon_width_and_height</item>
         <item name="android:layout_height">@dimen/settings_icon_width_and_height</item>
         <item name="android:layout_marginEnd">@dimen/settings_icon_end_margin</item>
@@ -23,12 +33,18 @@
         <item name="android:scaleType">fitCenter</item>
     </style>
 
-    <style name="easySettings_settingContainer">
+    <style name="settingsPageLibrary_settingContainer">
         <item name="android:layout_width">match_parent</item>
         <item name="android:layout_height">wrap_content</item>
         <item name="android:background">?android:attr/selectableItemBackground</item>
         <item name="android:clickable">true</item>
         <item name="android:focusable">true</item>
         <item name="android:padding">@dimen/settings_container_padding</item>
+    </style>
+
+    <style name="settingsPageLibrary_COLOR_checkboxColor" parent="Theme.AppCompat.Light">
+        <!-- selected checkbox color -->
+        <item name="colorAccent">#80F44336</item>
+        <item name="android:textColorSecondary">#80000000</item>
     </style>
 </resources>

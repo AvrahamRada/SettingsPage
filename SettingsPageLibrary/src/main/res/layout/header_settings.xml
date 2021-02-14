@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout
-
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:clickable="false"
     android:focusable="false"
@@ -8,14 +7,11 @@
     android:padding="0dp"
     android:paddingEnd="@dimen/settings_container_padding"
     android:paddingStart="@dimen/settings_container_padding"
-    style="@style/easySettings_settingContainer">
+    style="@style/settingsPageLibrary_settingContainer">
 
     <TextView
-        android:id="@+id/textView_headerSettingsObject_title"
-        style="@style/easySettings_textView_title"
-        android:lines="1"
-        android:textAppearance="?android:attr/textAppearanceSmall"
-        android:textColor="?attr/colorAccent"
-        android:textStyle="bold"/>
+        android:id="@+id/headerSettings_LBL_title"
+        style="@style/settingsPageLibrary_LBL_title"
+        android:lines="1"/>
 
 </LinearLayout>

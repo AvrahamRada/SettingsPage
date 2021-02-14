@@ -67,13 +67,12 @@ public class MainSettings {
             // Add underline below R.layout
             if(settObj.isSeparator())
             {
-                int dividerHeight = (int) resources.getDimension(R.dimen.settings_divider_height);
+                int dividerHeight = (int) resources.getDimension(R.dimen.settings_separator_height);
 
                 View divider = new View(context);
                 LinearLayout.LayoutParams params = new LinearLayout.LayoutParams(LinearLayout.LayoutParams.MATCH_PARENT,
                         dividerHeight);
-//                divider.setBackgroundColor(Color.LTGRAY);
-                divider.setBackgroundColor(Color.BLACK);
+                divider.setBackgroundColor(Color.GRAY);
                 divider.setLayoutParams(params);
                 settingsActivityContainer.addView(divider);
             }
