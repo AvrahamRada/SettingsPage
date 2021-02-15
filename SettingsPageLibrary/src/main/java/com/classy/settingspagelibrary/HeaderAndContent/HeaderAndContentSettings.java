@@ -14,45 +14,52 @@ import com.classy.settingspagelibrary.R;
 import java.io.Serializable;
 
 public class HeaderAndContentSettings extends BasicSettings implements Serializable {
-    private String content;
-    private boolean useContent;
-    @Nullable @IdRes
-    private Integer textViewContentId;            // TextView Content ID (R.id)
+    private String content;                                     // Actual content
+    @Nullable
+    @IdRes
+    private Integer headerAndContentSettings_LBL_contentId;     // TextView content ID (R.id)
+    private boolean useContent;                                 // should we use the content ?
 
     public HeaderAndContentSettings(String title) {
         super(title,
-                R.id.content_LBL_header,
+                R.id.headerAndContent_LBL_header,
                 true,
                 Type.CONTENT);
-        setContent("");
+        setContent(""); // Empty
         setUseContent(false);
-        setTextViewContentId(R.id.content_LBL_content);
+        setTextViewContentId(R.id.headerAndContent_LBL_content);
     }
 
+    // Content ID
     @Nullable
     public Integer getTextViewContentId() {
-        return textViewContentId;
+        return headerAndContentSettings_LBL_contentId;
     }
 
-    public void setTextViewContentId(@Nullable Integer textViewContentId) {
-        this.textViewContentId = textViewContentId;
+    private void setTextViewContentId(@Nullable Integer headerAndContentSettings_LBL_contentId) {
+        this.headerAndContentSettings_LBL_contentId = headerAndContentSettings_LBL_contentId;
     }
 
+    // Use Content
     public boolean isUseContent() {
         return useContent;
     }
 
-    public void setUseContent(boolean useContent) {
+    private void setUseContent(boolean useContent) {
         this.useContent = useContent;
     }
 
+    // Text Content
     public String getContent() {
         return content;
     }
 
     public void setContent(String content) {
         this.content = content;
-        this.useContent = true;
+        if (!(content.isEmpty() || content == "" || content == null))
+            this.useContent = true;
+        else
+            this.useContent = false;
     }
 
     @Override
@@ -61,31 +68,28 @@ public class HeaderAndContentSettings extends BasicSettings implements Serializa
     }
 
     @Override
-    public void initializeViews(View root)
-    {
+    public void initializeViews(View root) {
         int rootId = View.generateViewId();
         root.setId(rootId);
-        //individualSettingsRootId = rootId;
 
-        TextView tvTitle = root.findViewById(this.getTextViewTitleId());
-        tvTitle.setText(getTitle());
+        // Header
+        TextView titleId = root.findViewById(this.getTextViewTitleId());
+        titleId.setText(getTitle());
 
-        if (this.textViewContentId != null) {
-            TextView tvSummary = root.findViewById(textViewContentId);
-            String summary;
+        // Content
+        if (this.headerAndContentSettings_LBL_contentId != null) {
+            TextView contentId = root.findViewById(headerAndContentSettings_LBL_contentId);
+            String content;
 
-            if (this.useContent) {
-                summary = this.content;
-            } else {
-                summary = "Default Value";
-            }
+            if (this.useContent)
+                content = this.content;
+            else
+                content = "";
 
-            if (summary != null &&
-                    summary.isEmpty() == false) {
-                tvSummary.setText(summary);
-            } else {
-                tvSummary.setVisibility(View.GONE);
-            }
+            if (content != null && content.isEmpty() == false)
+                contentId.setText(content);
+            else
+                contentId.setVisibility(View.GONE);
         }
     }
 }

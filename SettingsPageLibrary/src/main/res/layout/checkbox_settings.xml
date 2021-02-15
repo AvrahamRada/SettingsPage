@@ -1,32 +1,31 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout
-    style="@style/settingsPageLibrary_settingContainer"
-    xmlns:android="http://schemas.android.com/apk/res/android">
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    style="@style/settingsPageLibrary_settingContainer">
 
     <ImageView
         android:id="@+id/checkboxSettings_IMG_image"
-        style="@style/settingsPageLibrary_IMG_logo"/>
+        style="@style/settingsPageLibrary_IMG_logo" />
 
     <TextView
         android:id="@+id/checkboxSettings_LBL_header"
         style="@style/settingsPageLibrary_LBL_header"
-        android:layout_toEndOf="@+id/checkboxSettings_IMG_image"
-        android:layout_toStartOf="@+id/checkboxSettings_CBX_checkbox"/>
+        android:layout_toStartOf="@+id/checkboxSettings_CBX_checkbox"
+        android:layout_toEndOf="@+id/checkboxSettings_IMG_image" />
 
     <TextView
         android:id="@+id/checkboxSettings_LBL_content"
         style="@style/settingsPageLibrary_LBL_content"
-        android:layout_alignEnd="@+id/checkboxSettings_LBL_header"
+        android:layout_below="@+id/checkboxSettings_LBL_header"
         android:layout_alignStart="@+id/checkboxSettings_LBL_header"
-        android:layout_below="@+id/checkboxSettings_LBL_header"/>
+        android:layout_alignEnd="@+id/checkboxSettings_LBL_header" />
 
     <CheckBox
         android:id="@+id/checkboxSettings_CBX_checkbox"
-        android:layout_marginStart="10dp"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentEnd="true"
         android:layout_centerVertical="true"
-        android:theme="@style/settingsPageLibrary_COLOR_checkboxColor"/>
+        android:layout_marginStart="10dp"
+        android:theme="@style/settingsPageLibrary_COLOR_checkboxColor" />
 
 </RelativeLayout>

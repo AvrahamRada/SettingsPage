@@ -6,7 +6,7 @@ public class HeaderAndContent {
 
     private HeaderAndContentSettings headerAndSubHeaderSettings;
 
-    public HeaderAndContent(String title){
+    public HeaderAndContent(String title) {
         headerAndSubHeaderSettings = new HeaderAndContentSettings(title);
     }
 
@@ -20,32 +20,32 @@ public class HeaderAndContent {
         return this;
     }
 
-    public HeaderAndContent setTextViewTitleId(int textViewTitleId) {
-        this.headerAndSubHeaderSettings.setTextViewTitleId(textViewTitleId);
-        return this;
-    }
-
-    public HeaderAndContent setTextViewContentId(int textViewContentId) {
-        this.headerAndSubHeaderSettings.setTextViewContentId(textViewContentId);
-        return this;
-    }
+//    public HeaderAndContent setTextViewTitleId(int textViewTitleId) {
+//        this.headerAndSubHeaderSettings.setTextViewTitleId(textViewTitleId);
+//        return this;
+//    }
+//
+//    public HeaderAndContent setTextViewContentId(int textViewContentId) {
+//        this.headerAndSubHeaderSettings.setTextViewContentId(textViewContentId);
+//        return this;
+//    }
 
     public HeaderAndContent setSeparator(boolean separator) {
         this.headerAndSubHeaderSettings.setSeparator(separator);
         return this;
     }
 
-    public HeaderAndContent setIndividualSettingsRootId(int individualSettingsRootId) {
-        this.headerAndSubHeaderSettings.setIndividualSettingsRootId(individualSettingsRootId);
-        return this;
-    }
+//    public HeaderAndContent setIndividualSettingsRootId(int individualSettingsRootId) {
+//        this.headerAndSubHeaderSettings.setIndividualSettingsRootId(individualSettingsRootId);
+//        return this;
+//    }
 
-    public HeaderAndContent setType(Type type) {
-        this.headerAndSubHeaderSettings.setType(type);
-        return this;
-    }
+//    public HeaderAndContent setType(Type type) {
+//        this.headerAndSubHeaderSettings.setType(type);
+//        return this;
+//    }
 
-    public HeaderAndContentSettings build(){
+    public HeaderAndContentSettings build() {
         return this.headerAndSubHeaderSettings;
     }
 }

@@ -1,32 +1,29 @@
 package com.classy.settingspagelibrary.Basic;
 
 import android.view.View;
-import android.widget.ImageView;
 import android.widget.TextView;
-
 import androidx.annotation.IdRes;
 import androidx.annotation.LayoutRes;
-
 import com.classy.settingspagelibrary.Enum.Type;
-
 import java.io.Serializable;
 
 public abstract class BasicSettings implements Serializable {
-    private String title;                   // Header
+    private String title;                           // Title
     @IdRes
-    private int textViewTitleId;            // TextView Header ID (R.id)
-    private boolean separator;              // Underline separator
+    private int basicSettings_LBL_titleId;             // TextView Title ID (R.id)
+    private boolean separator;                      // Underline separator
     @IdRes
-    private int individualSettingsRootId;   // rootId
-    private Type type;                      // Type of settings
+    private int individualSettingsRootId;    // rootId
+    private Type type;                              // Type of setting
 
-    public BasicSettings(String title, int textViewTitleId, boolean separator, Type type) {
+    public BasicSettings(String title, int basicSettings_LBL_titleId, boolean separator, Type type) {
         this.title = title;
-        this.textViewTitleId = textViewTitleId;
+        this.basicSettings_LBL_titleId = basicSettings_LBL_titleId;
         this.separator = separator;
         this.type = type;
     }
 
+    // title
     public String getTitle() {
         return title;
     }
@@ -35,16 +32,18 @@ public abstract class BasicSettings implements Serializable {
         this.title = title;
     }
 
+    // basicSettings_LBL_titleId
     @IdRes
     public int getTextViewTitleId() {
-        return textViewTitleId;
+        return basicSettings_LBL_titleId;
     }
 
-    public void setTextViewTitleId(int textViewTitleId) {
-        this.textViewTitleId = textViewTitleId;
+    public void setTextViewTitleId(int basicSettings_LBL_titleId) {
+        this.basicSettings_LBL_titleId = basicSettings_LBL_titleId;
     }
 
-    public boolean isSeparator() {
+    // separator
+    public boolean getSeparator() {
         return separator;
     }
 
@@ -52,6 +51,7 @@ public abstract class BasicSettings implements Serializable {
         this.separator = separator;
     }
 
+    // rootId
     @IdRes
     public int getIndividualSettingsRootId() {
         return individualSettingsRootId;
@@ -61,6 +61,7 @@ public abstract class BasicSettings implements Serializable {
         this.individualSettingsRootId = individualSettingsRootId;
     }
 
+    // type
     public Type getType() {
         return type;
     }
@@ -69,17 +70,14 @@ public abstract class BasicSettings implements Serializable {
         this.type = type;
     }
 
-    // --------------------------------
-
-    public void initializeViews(View root)
-    {
+    public void initializeViews(View root) {
         int rootId = View.generateViewId();
         root.setId(rootId);
         individualSettingsRootId = rootId;
 
-        // Set the title
-        TextView tvTitle = root.findViewById(textViewTitleId);
-        tvTitle.setText(getTitle());
+        // Title
+        TextView titleId = root.findViewById(basicSettings_LBL_titleId);
+        titleId.setText(getTitle());
     }
 
     @LayoutRes

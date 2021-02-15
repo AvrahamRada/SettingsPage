@@ -1,6 +1,4 @@
 package com.classy.settingspagelibrary.Switch;
-
-import com.classy.settingspagelibrary.CheckBox.CheckboxSettings;
 import com.classy.settingspagelibrary.Enum.Type;
 
 public class Switch {
@@ -21,28 +19,18 @@ public class Switch {
         return this;
     }
 
-    public Switch setTextViewTitleId(int textViewTitleId) {
-        this.switchSettings.setTextViewTitleId(textViewTitleId);
-        return this;
-    }
-
-    public Switch setTextViewContentId(int textViewContentId) {
-        this.switchSettings.setTextViewContentId(textViewContentId);
-        return this;
-    }
-
     public Switch setSeparator(boolean separator) {
         this.switchSettings.setSeparator(separator);
         return this;
     }
 
-    public Switch setIndividualSettingsRootId(int individualSettingsRootId) {
-        this.switchSettings.setIndividualSettingsRootId(individualSettingsRootId);
+    public Switch setType(Type type) {
+        this.switchSettings.setType(type);
         return this;
     }
 
-    public Switch setType(Type type) {
-        this.switchSettings.setType(type);
+    public Switch setChecked(boolean isChecked) {
+        this.switchSettings.setIsChecked(isChecked);
         return this;
     }
 

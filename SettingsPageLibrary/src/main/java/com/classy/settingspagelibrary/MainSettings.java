@@ -10,7 +10,7 @@ import android.view.ViewGroup;
 import android.widget.LinearLayout;
 
 import com.classy.settingspagelibrary.Basic.BasicSettings;
-import com.classy.settingspagelibrary.Header.HeaderSettings;
+import com.classy.settingspagelibrary.Title.TitleSettings;
 
 import java.util.ArrayList;
 import java.util.Collections;
@@ -65,7 +65,7 @@ public class MainSettings {
             settingsActivityContainer.addView(individualSettingsContainer);
 
             // Add underline below R.layout
-            if(settObj.isSeparator())
+            if(settObj.getSeparator())
             {
                 int dividerHeight = (int) resources.getDimension(R.dimen.settings_separator_height);
 
@@ -77,16 +77,16 @@ public class MainSettings {
                 settingsActivityContainer.addView(divider);
             }
 
-            if(settObj instanceof HeaderSettings)
+            if(settObj instanceof TitleSettings)
             {
                 int settingsPadding = (int) resources.getDimension(R.dimen.settings_container_padding);
                 int bottomPadding = individualSettingsContainer.getPaddingBottom();
                 int topPadding = individualSettingsContainer.getPaddingTop();
 
                 // If i am the first or the last layout
-                if(i == 0 || mySettings.get(i-1).isSeparator())
+                if(i == 0 || mySettings.get(i-1).getSeparator())
                     topPadding = settingsPadding;
-                if(settObj.isSeparator())
+                if(settObj.getSeparator())
                     bottomPadding = settingsPadding;
 
                 individualSettingsContainer.setPadding(individualSettingsContainer.getPaddingLeft(),

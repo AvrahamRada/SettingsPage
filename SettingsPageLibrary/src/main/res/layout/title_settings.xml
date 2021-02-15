@@ -1,17 +1,16 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    style="@style/settingsPageLibrary_settingContainer"
     android:clickable="false"
     android:focusable="false"
     android:orientation="vertical"
     android:padding="0dp"
-    android:paddingEnd="@dimen/settings_container_padding"
     android:paddingStart="@dimen/settings_container_padding"
-    style="@style/settingsPageLibrary_settingContainer">
+    android:paddingEnd="@dimen/settings_container_padding">
 
     <TextView
         android:id="@+id/headerSettings_LBL_title"
         style="@style/settingsPageLibrary_LBL_title"
-        android:lines="1"/>
+        android:lines="1" />
 
 </LinearLayout>

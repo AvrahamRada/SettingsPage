@@ -8,6 +8,7 @@ import androidx.annotation.Nullable;
 
 import com.classy.settingspagelibrary.CheckBox.CheckboxSettings;
 import com.classy.settingspagelibrary.Enum.Type;
+import com.classy.settingspagelibrary.Seekbar.Seekbar;
 
 public class Image {
 
@@ -27,32 +28,12 @@ public class Image {
         return this;
     }
 
-    public Image setTextViewTitleId(int textViewTitleId) {
-        this.imageSettings.setTextViewTitleId(textViewTitleId);
-        return this;
-    }
-
-    public Image setTextViewContentId(int textViewContentId) {
-        this.imageSettings.setTextViewContentId(textViewContentId);
-        return this;
-    }
-
     public Image setSeparator(boolean separator) {
         this.imageSettings.setSeparator(separator);
         return this;
     }
 
-    public Image setIndividualSettingsRootId(int individualSettingsRootId) {
-        this.imageSettings.setIndividualSettingsRootId(individualSettingsRootId);
-        return this;
-    }
-
-    public Image setType(Type type) {
-        this.imageSettings.setType(type);
-        return this;
-    }
-
-    public Image setImageViewIconId(@Nullable @IdRes Integer imageViewIconId) {
+    private Image setImageViewIconId(@Nullable @IdRes Integer imageViewIconId) {
         this.imageSettings.setImageViewIconId(imageViewIconId);
         return this;
     }
@@ -62,7 +43,7 @@ public class Image {
         return this;
     }
 
-    public Image setIconDrawable(@Nullable Drawable iconDrawable) {
+    private Image setIconDrawable(@Nullable Drawable iconDrawable) {
         this.setIconDrawable(iconDrawable);
         return this;
     }

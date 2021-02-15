@@ -20,28 +20,13 @@ public class Checkbox {
         return this;
     }
 
-    public Checkbox setTextViewTitleId(int textViewTitleId) {
-        this.checkboxSettings.setTextViewTitleId(textViewTitleId);
-        return this;
-    }
-
-    public Checkbox setTextViewContentId(int textViewContentId) {
-        this.checkboxSettings.setTextViewContentId(textViewContentId);
-        return this;
-    }
-
     public Checkbox setSeparator(boolean separator) {
         this.checkboxSettings.setSeparator(separator);
         return this;
     }
 
-    public Checkbox setIndividualSettingsRootId(int individualSettingsRootId) {
-        this.checkboxSettings.setIndividualSettingsRootId(individualSettingsRootId);
-        return this;
-    }
-
-    public Checkbox setType(Type type) {
-        this.checkboxSettings.setType(type);
+    public Checkbox setChecked(boolean isChecked) {
+        this.checkboxSettings.setIsChecked(isChecked);
         return this;
     }
 

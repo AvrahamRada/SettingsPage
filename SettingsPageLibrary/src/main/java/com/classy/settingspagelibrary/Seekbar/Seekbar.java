@@ -21,28 +21,8 @@ public class Seekbar {
         return this;
     }
 
-    public Seekbar setTextViewTitleId(int textViewTitleId) {
-        this.seekbarSettings.setTextViewTitleId(textViewTitleId);
-        return this;
-    }
-
-    public Seekbar setTextViewContentId(int textViewContentId) {
-        this.seekbarSettings.setTextViewContentId(textViewContentId);
-        return this;
-    }
-
     public Seekbar setSeparator(boolean separator) {
         this.seekbarSettings.setSeparator(separator);
-        return this;
-    }
-
-    public Seekbar setIndividualSettingsRootId(int individualSettingsRootId) {
-        this.seekbarSettings.setIndividualSettingsRootId(individualSettingsRootId);
-        return this;
-    }
-
-    public Seekbar setType(Type type) {
-        this.seekbarSettings.setType(type);
         return this;
     }
 

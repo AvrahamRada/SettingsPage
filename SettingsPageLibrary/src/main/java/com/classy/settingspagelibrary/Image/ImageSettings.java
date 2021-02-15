@@ -19,10 +19,10 @@ public class ImageSettings extends BasicSettings implements Serializable {
     private String content;
     private boolean useContent;
     @Nullable @IdRes
-    private Integer textViewContentId;     // TextView Content ID (R.id)
+    private Integer imageSettings_LBL_contentId;   // TextView Content ID (R.id)
 
     @Nullable @IdRes
-    private Integer imageViewIconId; // id of the ImageView icon
+    private Integer imageSettings_IMG_IconId; // id of the ImageView icon
     @Nullable @DrawableRes
     private Integer iconDrawableId;	// id of the Drawable icon
     @Nullable
@@ -43,11 +43,11 @@ public class ImageSettings extends BasicSettings implements Serializable {
 
     @Nullable @IdRes
     public Integer getImageViewIconId() {
-        return imageViewIconId;
+        return imageSettings_IMG_IconId;
     }
 
-    public void setImageViewIconId(@Nullable @IdRes Integer imageViewIconId) {
-        this.imageViewIconId = imageViewIconId;
+    public void setImageViewIconId(@Nullable @IdRes Integer imageSettings_IMG_IconId) {
+        this.imageSettings_IMG_IconId = imageSettings_IMG_IconId;
     }
 
     @Nullable @DrawableRes
@@ -70,11 +70,11 @@ public class ImageSettings extends BasicSettings implements Serializable {
 
     @Nullable
     public Integer getTextViewContentId() {
-        return textViewContentId;
+        return imageSettings_LBL_contentId;
     }
 
-    public void setTextViewContentId(@Nullable Integer textViewContentId) {
-        this.textViewContentId = textViewContentId;
+    public void setTextViewContentId(@Nullable Integer imageSettings_LBL_contentId) {
+        this.imageSettings_LBL_contentId = imageSettings_LBL_contentId;
     }
 
     public boolean isUseContent() {
@@ -108,30 +108,26 @@ public class ImageSettings extends BasicSettings implements Serializable {
         TextView imageSetting_LBL_header = root.findViewById(this.getTextViewTitleId());
         imageSetting_LBL_header.setText(getTitle());
 
-        // Content TextBox
-        if (this.textViewContentId != null) {
-            TextView imageSetting_LBL_content = root.findViewById(textViewContentId);
+        // Content
+        if (this.imageSettings_LBL_contentId != null) {
+            TextView contentId = root.findViewById(imageSettings_LBL_contentId);
             String content;
 
-            if (this.useContent) {
+            if (this.useContent)
                 content = this.content;
-            } else {
-                content = null;
-            }
+            else
+                content = "";
 
-            if (content != null &&
-                    content.isEmpty() == false) {
-                imageSetting_LBL_content.setText(content);
-            } else {
-                imageSetting_LBL_content.setVisibility(View.GONE);
-            }
-
+            if (content != null && content.isEmpty() == false)
+                contentId.setText(content);
+            else
+                contentId.setVisibility(View.GONE);
         }
-        // Image
-        if(imageViewIconId != null)
-        {
-            ImageView ivIcon = root.findViewById(imageViewIconId);
 
+        // Image
+        if(imageSettings_IMG_IconId != null)
+        {
+            ImageView ivIcon = root.findViewById(imageSettings_IMG_IconId);
             if(iconDrawable != null)
                 ivIcon.setImageDrawable(iconDrawable);
             else if(iconDrawableId == null)

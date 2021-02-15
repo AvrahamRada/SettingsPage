@@ -3,6 +3,7 @@ package com.classy.settingspagelibrary.CheckBox;
 import android.view.View;
 import android.widget.CheckBox;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.annotation.IdRes;
 import androidx.annotation.Nullable;
@@ -16,49 +17,52 @@ import java.io.Serializable;
 public class CheckboxSettings extends BasicSettings implements Serializable {
     private String content;
     private boolean useContent;
-    @Nullable @IdRes
-    private Integer textViewContentId;     // TextView Content ID (R.id)
+    @Nullable
+    @IdRes
+    private Integer checkboxSettings_LBL_contentId;     // TextView Content ID (R.id)
 
     private boolean isChecked;
-    @Nullable @IdRes
-    private Integer checkboxId;            // CheckBox ID (R.id)
+    @Nullable
+    @IdRes
+    private Integer checkboxSettings_CBX_checkboxId;            // CheckBox ID (R.id)
 
     public CheckboxSettings(String title) {
         super(title,
                 R.id.checkboxSettings_LBL_header,
                 true,
                 Type.CHECKBOX);
+
         setContent("");
         setUseContent(false);
         setTextViewContentId(R.id.checkboxSettings_LBL_content);
-        setCheckboxSettings_LBL_isChecked(false);
+        setIsChecked(false);
         setCheckboxId(R.id.checkboxSettings_CBX_checkbox);
     }
 
-    public boolean isCheckboxSettings_LBL_isChecked() {
+    public boolean getIsChecked() {
         return isChecked;
     }
 
-    public void setCheckboxSettings_LBL_isChecked(boolean checkboxSettings_LBL_isChecked) {
-        this.isChecked = checkboxSettings_LBL_isChecked;
+    public void setIsChecked(boolean isChecked) {
+        this.isChecked = isChecked;
     }
 
     @Nullable
     public Integer getCheckboxId() {
-        return checkboxId;
+        return checkboxSettings_CBX_checkboxId;
     }
 
-    public void setCheckboxId(@Nullable Integer checkboxId) {
-        this.checkboxId = checkboxId;
+    public void setCheckboxId(@Nullable Integer checkboxSettings_CBX_checkboxId) {
+        this.checkboxSettings_CBX_checkboxId = checkboxSettings_CBX_checkboxId;
     }
 
     @Nullable
     public Integer getTextViewContentId() {
-        return textViewContentId;
+        return checkboxSettings_LBL_contentId;
     }
 
-    public void setTextViewContentId(@Nullable Integer textViewContentId) {
-        this.textViewContentId = textViewContentId;
+    public void setTextViewContentId(@Nullable Integer checkboxSettings_LBL_contentId) {
+        this.checkboxSettings_LBL_contentId = checkboxSettings_LBL_contentId;
     }
 
     public boolean isUseContent() {
@@ -75,7 +79,10 @@ public class CheckboxSettings extends BasicSettings implements Serializable {
 
     public void setContent(String content) {
         this.content = content;
-        this.useContent = true;
+        if (!(content.isEmpty() || content == "" || content == null))
+            this.useContent = true;
+        else
+            this.useContent = false;
     }
 
     @Override
@@ -84,51 +91,38 @@ public class CheckboxSettings extends BasicSettings implements Serializable {
     }
 
     @Override
-    public void initializeViews(View root)
-    {
+    public void initializeViews(View root) {
         int rootId = View.generateViewId();
         root.setId(rootId);
-        //individualSettingsRootId = rootId;
 
-        TextView tvTitle = root.findViewById(this.getTextViewTitleId());
-        tvTitle.setText(getTitle());
+        // Header
+        TextView titleId = root.findViewById(this.getTextViewTitleId());
+        titleId.setText(getTitle());
 
-        // Content TextBox
-        if (this.textViewContentId != null) {
-            TextView tvSummary = root.findViewById(textViewContentId);
-            String summary;
+        // Content
+        if (this.checkboxSettings_LBL_contentId != null) {
+            TextView contentId = root.findViewById(checkboxSettings_LBL_contentId);
+            String content;
 
-            if (this.useContent) {
-                summary = this.content;
-            } else {
-                summary = "Default Value";
-            }
+            if (this.useContent)
+                content = this.content;
+            else
+                content = "";
 
-            if (summary != null &&
-                    summary.isEmpty() == false) {
-                tvSummary.setText(summary);
-            } else {
-                tvSummary.setVisibility(View.GONE);
-            }
+            if (content != null && content.isEmpty() == false)
+                contentId.setText(content);
+            else
+                contentId.setVisibility(View.GONE);
         }
 
         // CheckBox
-        if (this.checkboxId != null) {
-            CheckBox tvSummary = root.findViewById(this.checkboxId);
-            String summary;
+        if (this.checkboxSettings_CBX_checkboxId != null) {
+            CheckBox checkboxId = root.findViewById(this.checkboxSettings_CBX_checkboxId);
 
-//            if (this.) {
-//                summary = this.content;
-//            } else {
-//                summary = "Default Value";
-//            }
-//
-//            if (summary != null &&
-//                    summary.isEmpty() == false) {
-//                tvSummary.setText(summary);
-//            } else {
-//                tvSummary.setVisibility(View.GONE);
-//            }
+            if (getIsChecked())
+                checkboxId.setChecked(true);
+            else
+                checkboxId.setChecked(false);
         }
     }
 }
