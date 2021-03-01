@@ -100,7 +100,12 @@ Use that to add a IMAGE:
 
 Of course you can edit the text and the variables and create callbacks as you prefer in your activity.
 
-<img src="images/settings01.png" width=250>
+<img src="images/setting01.png" width=250>
+<img src="images/setting02.png" width=250>
+<img src="images/setting03.png" width=250>
+<img src="images/setting04.png" width=250>
+<img src="images/setting05.png" width=250>
+<img src="images/setting06.png" width=250>
           
 ## License
 
