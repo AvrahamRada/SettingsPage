@@ -1,11 +1,14 @@
 # SettingsPage
 Library of settings page for Advanced Android course
 
+[![](https://jitpack.io/v/AvrahamRada/SettingsPage.svg)](https://jitpack.io/#AvrahamRada/SettingsPage)
+
 ## Description:
 Hi :)
 
 This is a library that can help anyone add setting page easily in their app.
 I created 6 types of layouts you can add to your setting activity:
+
 1. TITLE
 2. TITLE + CONTENT
 3. CHECKBOX
@@ -13,11 +16,9 @@ I created 6 types of layouts you can add to your setting activity:
 5. SEEKBAR
 6. IMAGE
 
-## Screenshots:
+## GIF:
 
-<img src="images/settings01.png" width=250>
-<img src="images/settings01.jpeg" width=250>
-<img src="images/settings01" width=250>
+![](assets/settings.gif) 
 
 ## Setup:
 Step 1. Add it in your root build.gradle at the end of repositories:
@@ -40,39 +41,66 @@ dependencies {
 ```
 ## Usage
 
-Add this line in the activity where you want you screen locker will appear:
+First we will need to create a collection that will contain the different types of frames we will need.
+
+Use that to add a TITLE:
 ```java                    
 
-        MySharedPreferences.init(this);
+        new Title("General")
+                  .build()
 
 ```
 
-![](assets/new_password.gif)
-
-After that check if password has not already set.
-If not, call setNewPassword. If yes, call checkPassword:
+Use that to add a TITLE + CONTENT:
 ```java                    
 
-        if (MySharedPreferences.getString("password", null) == null) // Set new password
-            ScreenLock.setNewPassword(this, Constants.NUMBERS, SuccessActivity.class);
-        else {
-            ScreenLock.checkPassword(this, Constants.NUMBERS, SuccessActivity.class);
-        }
+        new HeaderAndContent("Title")
+                   .setSeparator(false)
+                   .build()
+
+```
+Use that to add a CHECKBOX:
+```java                    
+
+        new Checkbox("Title")
+                        .setContent("content")
+                        .setChecked(true)
+                        .setSeparator(false)
+                        .build(),
+
+```
+Use that to add a SWITCH:
+```java                    
+
+        new Switch("Sound")
+                        .setContent("Off")
+                        .setChecked(true)
+                        .setSeparator(true)
+                        .build()
+
+```
+Use that to add a SEEKBAR:
+```java                    
+
+        new Seekbar("Brightness")
+                        .setContent("content")
+                        .build()
+
+```
+Use that to add a IMAGE:
+```java                    
+
+        new Image("Instagram")
+                        .setIconDrawableId(R.drawable.instagram)
+                        .setContent("Click to visit")
+                        .build()
 
 ```
 
-![](assets/check_password.gif)
 
-If you want to change the password please call changePassword:
-```java                    
+Of course you can edit the text and the variables and create callbacks as you prefer in your activity.
 
-        ScreenLock.changePassword(SuccessActivity.this, Constants.NUMBERS, MainActivity.class);
-
-```
-
-![](assets/change_password.gif)   
-
-
+<img src="images/settings01.png" width=250>
           
 ## License
 
