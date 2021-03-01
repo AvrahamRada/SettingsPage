@@ -59,6 +59,9 @@ Use that to add a TITLE + CONTENT:
                    .build()
 
 ```
+
+<img src="images/setting06.png" width=250>
+
 Use that to add a CHECKBOX:
 ```java                    
 
@@ -66,9 +69,13 @@ Use that to add a CHECKBOX:
                         .setContent("content")
                         .setChecked(true)
                         .setSeparator(false)
-                        .build(),
+                        .build()
 
 ```
+
+<img src="images/setting02.png" width=250>
+
+
 Use that to add a SWITCH:
 ```java                    
 
@@ -79,6 +86,10 @@ Use that to add a SWITCH:
                         .build()
 
 ```
+
+<img src="images/setting03.png" width=250>
+
+
 Use that to add a SEEKBAR:
 ```java                    
 
@@ -87,6 +98,10 @@ Use that to add a SEEKBAR:
                         .build()
 
 ```
+
+<img src="images/setting05.png" width=250>
+
+
 Use that to add a IMAGE:
 ```java                    
 
@@ -97,15 +112,11 @@ Use that to add a IMAGE:
 
 ```
 
+<img src="images/setting04.png" width=250>
+
 
 Of course you can edit the text and the variables and create callbacks as you prefer in your activity.
 
-<img src="images/setting01.png" width=250>
-<img src="images/setting02.png" width=250>
-<img src="images/setting03.png" width=250>
-<img src="images/setting04.png" width=250>
-<img src="images/setting05.png" width=250>
-<img src="images/setting06.png" width=250>
           
 ## License
 
