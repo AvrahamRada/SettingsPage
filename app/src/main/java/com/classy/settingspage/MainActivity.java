@@ -42,7 +42,7 @@ public class MainActivity extends AppCompatActivity {
         });
 
         mySettings = MainSettings.createSettingsArray(
-                new Title("General")                // TITLE
+                new Title("General")
                         .build(),
                 new HeaderAndContent("Title")
                         .setSeparator(false)
