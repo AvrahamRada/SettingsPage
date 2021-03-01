@@ -5,15 +5,24 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="#B3F44336"
     tools:context=".MainActivity">
 
-    <TextView
-        android:layout_width="wrap_content"
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/main_BTN_click"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="click the overflow menu and select 'Settings'"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent"/>
+        android:textColor="@color/white"
+        android:layout_centerInParent="true"
+        android:layout_gravity="center_horizontal"
+        app:cornerRadius="50dp"
+        android:layout_marginStart="40dp"
+        android:layout_marginEnd="40dp"
+        style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+        app:strokeColor="@color/white"
+        android:text="click to open settings"/>
+
+
+
 
 </RelativeLayout>
