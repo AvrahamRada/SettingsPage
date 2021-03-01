@@ -17,4 +17,6 @@ Break The Code and enter to the next Activity. :lock: --> :unlock:
 
 ## Screenshots:
 
-<img src="images/settings01.png" width=250>    <img src="images/main_activity.jpeg" width=250>    <img src="images/success_activity.jpeg" width=250>
+<img src="images/settings01.png" width=250>
+<img src="images/settings01.jpeg" width=250>
+<img src="images/settings01" width=250>
